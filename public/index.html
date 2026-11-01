@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f3ed">
+  <meta name="description" content="Czech and international news: daily summaries and reporting on world affairs, business, economics, science, climate and sports.">
+  <title>The Morning Brief</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <script src="./assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#all-news">Skip to news</a>
+  <div class="shell">
+    <div class="topline"><span id="today"></span><span id="updated" role="status">Loading…</span></div>
+    <header class="masthead">
+      <h1 class="brand">The Morning Brief<span>.</span></h1>
+      <div class="tools">
+        <button class="savedbtn" id="saved" aria-pressed="false">Saved <span id="savedcount">0</span></button>
+        <button class="iconbtn" id="refresh" title="Refresh news" aria-label="Refresh news"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M6 6a8 8 0 0 1 13 4M18 18A8 8 0 0 1 5 14"/></svg></button>
+      </div>
+    </header>
+    <div class="navigation">
+      <div class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="search" type="search" placeholder="Search news" autocomplete="off" aria-label="Search headlines, excerpts and sources"><button id="clear-search" type="button" aria-label="Clear search" hidden>×</button></div>
+      <nav class="topics" aria-label="News categories">
+        <button data-category="All" class="active" aria-pressed="true">All</button>
+        <button data-category="Czechia" aria-pressed="false">Czechia</button>
+        <button data-category="World" aria-pressed="false">World</button>
+        <button data-category="Business" aria-pressed="false">Business</button>
+        <button data-category="Economics" aria-pressed="false">Economics</button>
+        <button data-category="Politics" aria-pressed="false">Politics</button>
+        <button data-category="Science" aria-pressed="false">Science</button>
+        <button data-category="Sports" aria-pressed="false">Sports</button>
+        <button data-category="Climate" aria-pressed="false">Climate</button>
+      </nav>
+    </div>
+    <div id="notice" role="status"></div>
+    
+    <div class="workspace">
+      <main id="all-news" tabindex="-1">
+        <div class="sectionlabel"><h2 id="sectiontitle">News</h2><span id="storycount" class="count" aria-live="polite"></span></div>
+        <div id="stories" class="stories"><div class="loading">Loading…</div></div>
+        <button id="more" class="loadmore" hidden>More stories ↓</button>
+      </main>
+      <aside><details class="sources-panel"><summary>Sources</summary><div id="sources"></div></details></aside>
+    </div>
+  </div>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button data-view="news" class="active" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg><span>News</span></button>
+    <button data-view="czech"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4h15v11H5M5 4l7 5.5L5 15M12 9.5h8"/></svg><span>Czechia</span></button>
+    <button data-view="saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>Saved <span id="mobile-savedcount"></span></span></button>
+  </nav>
+  <dialog id="reader" aria-labelledby="reader-title">
+    <div class="dialogtop"><button id="close-reader" class="backbtn" aria-label="Close article and go back">← Back</button><button id="reader-save" class="reader-save" aria-pressed="false">Save</button></div>
+    <div id="readerbody"></div>
+    <div class="reader-footer"><a id="reader-original" class="original" target="_blank" rel="noopener noreferrer">Read full article ↗</a></div>
+  </dialog>
+</body>
+</html>
