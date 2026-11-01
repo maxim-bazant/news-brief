@@ -1,7 +1,7 @@
 name: Refresh news and deploy Pages
 on:
   push:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
   schedule:
     - cron: "1,31 * * * *"
